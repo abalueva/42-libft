@@ -6,7 +6,7 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:37:04 by abalueva          #+#    #+#             */
-/*   Updated: 2019/10/03 14:42:07 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 14:52:43 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,15 @@
 
 void		ft_putnbr(int nb)
 {
-	ft_putnbr_fc(nb, 1);
+	long int	nbr;
+
+	nbr = nb;
+	if (nb < 0)
+	{
+		nbr *= -1;
+		ft_putchar('-');
+	}
+	if (nbr >= 10)
+		ft_putnbr(nbr / 10);
+	ft_putchar(nbr % 10 + 48);
 }

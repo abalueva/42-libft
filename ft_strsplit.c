@@ -6,12 +6,9 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/19 13:00:53 by vtouffet          #+#    #+#             */
-/*   Updated: 2019/10/03 14:45:19 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 14:54:14 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-#include "libft.h"
 
 #include <stdlib.h>
 #include "libft.h"
@@ -94,7 +91,7 @@ char			**ft_strsplitchrset(char *str, const char *charset)
 	return (tab);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	*charset;
 
