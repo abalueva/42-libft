@@ -6,7 +6,7 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 13:12:56 by abalueva          #+#    #+#             */
-/*   Updated: 2019/10/03 14:22:51 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 15:00:15 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int			ft_atoi(char *str)
 {
-	int		prev;
-	int		nb;
+	long	prev;
+	long	nb;
 	int		negative;
 
 	nb = 0;
