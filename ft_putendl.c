@@ -6,7 +6,7 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 20:58:43 by abalueva          #+#    #+#             */
-/*   Updated: 2019/09/23 17:07:57 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 14:43:33 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void		ft_putendl(char *s)
 {
-	ft_putstr(s);
-	ft_putchar('\n');
+	ft_putendl_fd(s, 1);
 }

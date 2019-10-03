@@ -6,7 +6,7 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:26:59 by abalueva          #+#    #+#             */
-/*   Updated: 2019/09/23 15:48:06 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 14:43:51 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void		ft_putstr(char *str)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	ft_putstr_fd(str, 1);
 }

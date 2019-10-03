@@ -6,7 +6,7 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 15:57:36 by abalueva          #+#    #+#             */
-/*   Updated: 2019/09/25 21:13:26 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 14:41:45 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void		ft_bzero(void *s, size_t n)
 {
-	unsigned char *ptr;
-
-	ptr = (unsigned char *)s;
-	while (n--)
-		*(ptr++) = 0;
+	ft_memset(s, 0, n);
 }
