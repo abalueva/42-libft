@@ -6,7 +6,7 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/19 13:00:53 by vtouffet          #+#    #+#             */
-/*   Updated: 2019/10/03 14:54:14 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 15:01:55 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static int		word_size(char *str, char const *charset)
 	return (size);
 }
 
-char			**ft_strsplitchrset(char *str, const char *charset)
+static char			**ft_strsplitchrset(char *str, const char *charset)
 {
 	char	**tab;
 	int		i;
