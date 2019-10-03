@@ -6,7 +6,7 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 16:25:31 by abalueva          #+#    #+#             */
-/*   Updated: 2019/09/26 23:16:33 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 14:21:37 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static char		**find(char const *s, char c, int len)
 		while (s[j] != c && s[j] != '\0')
 			++j;
 		fresh[z] = ft_strsub(s, i, j - i);
-		fresh[z] = fresh[z][0] == '\0' ? NULL : fresh[z];
 		z++;
 		i = j;
 		while (s[i] == c && s[i] != '\0')
