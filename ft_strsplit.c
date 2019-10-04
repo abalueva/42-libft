@@ -6,7 +6,7 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 16:25:31 by abalueva          #+#    #+#             */
-/*   Updated: 2019/10/03 19:34:26 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 19:35:07 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,25 @@
 
 static int		ft_find_size(char const *s, char c)
 {
-	int		i;
-	int		size;
+	size_t	i;
+	int		fl;
+	int		len;
 
 	i = 0;
-	size = 0;
+	fl = 0;
+	len = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c)
-			i++;
-		size++;
-		while (s[i] != c)
-			i++;
+		if (s[i] != c && fl == 0)
+		{
+			fl = 1;
+			len++;
+		}
+		else if (s[i] == c)
+			fl = 0;
 		i++;
 	}
-	return (size);
+	return (len);
 }
 
 char			**ft_strsplit(char const *s, char c)
