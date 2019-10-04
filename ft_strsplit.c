@@ -6,7 +6,7 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 16:25:31 by abalueva          #+#    #+#             */
-/*   Updated: 2019/10/03 19:16:30 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 19:17:21 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ static char		**find(char const *s, char c, int len)
 	char	**fresh;
 
 	i = 0;
-	z = 0;
+	j = 0;
+	z = -1;
 	if (!(fresh = malloc(sizeof(char *) * (len + 1))) || !s || !c)
 		return (NULL);
 	while (++z < len)
