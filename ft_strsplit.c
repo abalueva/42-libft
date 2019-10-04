@@ -6,7 +6,7 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 16:25:31 by abalueva          #+#    #+#             */
-/*   Updated: 2019/10/03 15:08:41 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 19:12:05 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,6 @@ static int		ft_find_size(char const *s, char c)
 	return (size);
 }
 
-static char		*free_null(char **str)
-{
-	free(*str);
-	return (NULL);
-}
-
 static char		**find(char const *s, char c, int len)
 {
 	int		i;
@@ -47,7 +41,7 @@ static char		**find(char const *s, char c, int len)
 
 	i = 0;
 	z = 0;
-	if (!(fresh = malloc(sizeof(char *) * (len + 1))) || !s)
+	if (!(fresh = malloc(sizeof(char *) * (len + 1))) || !s || !c)
 		return (NULL);
 	while (s[i] != '\0')
 	{
@@ -56,12 +50,9 @@ static char		**find(char const *s, char c, int len)
 		j = i;
 		while (s[j] != c && s[j] != '\0')
 			++j;
-		fresh[z] = ft_strsub(s, i, j - i);
-		fresh[z] = fresh[z][0] == '\0' ? free_null(&fresh[z]) : fresh[z];
+		fresh[z] = ft_strsub(s, z, j - i);
 		z++;
 		i = j;
-		while (s[i] == c && s[i] != '\0')
-			++i;
 	}
 	fresh[z] = NULL;
 	return (fresh);
