@@ -6,66 +6,59 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 16:25:31 by abalueva          #+#    #+#             */
-/*   Updated: 2019/10/03 19:14:30 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 19:15:13 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static int		ft_find_size(char const *s, char c)
+static size_t	ft_cw(char const *s, char c)
 {
-	int		i;
-	int		size;
+	size_t	i;
+	int		fl;
+	int		len;
 
 	i = 0;
-	size = 0;
+	fl = 0;
+	len = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c)
-			i++;
-		size++;
-		while (s[i] != c)
-			i++;
+		if (s[i] != c && fl == 0)
+		{
+			fl = 1;
+			len++;
+		}
+		else if (s[i] == c)
+			fl = 0;
 		i++;
 	}
-	return (size);
-}
-
-static char		**find(char const *s, char c, int len)
-{
-	int		i;
-	int		j;
-	int		z;
-	char	**fresh;
-
-	i = 0;
-	z = 0;
-	if (!(fresh = malloc(sizeof(char *) * (len + 1))) || !s || !c)
-		return (NULL);
-	while (s[i] != '\0')
-	{
-		while (s[i] == c && s[i] != '\0')
-			++i;
-		j = i;
-		while (s[j] != c && s[j] != '\0')
-			++j;
-		fresh[z] = ft_strsub(s, i, j - i);
-		z++;
-		i = j;
-	}
-	fresh[z] = NULL;
-	return (fresh);
+	return (len);
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
-	int		len;
-	char	**fresh;
+	char	**r;
+	int		fl;
+	size_t	i[3];
 
-	if (!s)
+	fl = 0;
+	i[0] = 0;
+	i[2] = -1;
+	if (!s || !c)
 		return (NULL);
-	len = ft_find_size(s, c);
-	fresh = find(s, c, len);
-	return (fresh);
+	if (!(r = (char **)malloc(sizeof(char *) * (ft_cw(s, c) + 1))))
+		return (NULL);
+	while (++i[2] < ft_cw(s, c))
+	{
+		while (s[i[0]] == c && s[i[0]] != '\0')
+			i[0]++;
+		i[1] = i[0];
+		while (s[i[1]] != c && s[i[1]] != '\0')
+			i[1]++;
+		r[i[2]] = ft_strsub(s, i[0], i[1] - i[0]);
+		i[0] = i[1];
+	}
+	r[i[2]] = (NULL);
+	return (r);
 }
