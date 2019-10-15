@@ -6,7 +6,7 @@
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 18:10:27 by abalueva          #+#    #+#             */
-/*   Updated: 2019/10/15 01:32:11 by abalueva         ###   ########.fr       */
+/*   Updated: 2019/10/03 13:40:02 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_btree
+{
+	struct s_btree		*left;
+	struct s_btree		*right;
+	void				*item;
+}				t_btree;
 
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
@@ -85,5 +92,15 @@ int				ft_isdigit(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int arg);
+
+t_btree			*ft_btree_create_node(void *item);
+void			ft_btree_insert_data(t_btree **root, void *item,
+									int (*cmpf)(void *, void *));
+void			ft_btree_apply_infix(t_btree *root,
+									void (*applyf)(void *));
+void			ft_btree_apply_suffix(t_btree *root,
+									void (*applyf)(void *));
+void			ft_btree_apply_prefix(t_btree *root,
+									void (*applyf)(void *));
 
 #endif

@@ -15,6 +15,8 @@ SRCS=		ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
 			ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 			ft_lstnew.c ft_lstdelone.c ft_lstdel.c \
 			ft_lstadd.c ft_lstiter.c ft_lstmap.c \
+			ft_btree_create_node.c ft_btree_insert_data.c ft_btree_apply_infix.c \
+			ft_btree_apply_prefix.c ft_btree_apply_suffix.c
 
 OBJECTS=	ft_bzero.o ft_memalloc.o ft_memccpy.o ft_memchr.o ft_memcmp.o \
 			ft_memcpy.o ft_memdel.o ft_memmove.o ft_memset.o \
@@ -31,6 +33,8 @@ OBJECTS=	ft_bzero.o ft_memalloc.o ft_memccpy.o ft_memchr.o ft_memcmp.o \
 			ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o \
 			ft_lstnew.o ft_lstdelone.o ft_lstdel.o \
 			ft_lstadd.o ft_lstiter.o ft_lstmap.o \
+			ft_btree_create_node.o ft_btree_insert_data.o ft_btree_apply_infix.o \
+			ft_btree_apply_prefix.o ft_btree_apply_suffix.o
 
 all: $(NAME)
 

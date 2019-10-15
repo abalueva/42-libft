@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_btree_create_node.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abalueva <abalueva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/21 15:14:54 by abalueva          #+#    #+#             */
-/*   Updated: 2019/10/12 00:46:23 by abalueva         ###   ########.fr       */
+/*   Created: 2019/08/22 13:25:48 by abalueva          #+#    #+#             */
+/*   Updated: 2019/09/29 16:39:50 by abalueva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char		*ft_strjoin(char const *s1, char const *s2)
+t_btree		*ft_btree_create_node(void *item)
 {
-	char	*str;
-	int		len;
+	t_btree *node;
 
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc(sizeof(*str) * (len + 1));
-	if (str == NULL)
+	if (!(node = (t_btree *)malloc(sizeof(t_btree))))
 		return (NULL);
-	ft_strcpy(str, (char *)s1);
-	ft_strcat(str, (char *)s2);
-	return (str);
+	node->left = 0;
+	node->right = 0;
+	node->item = item;
+	return (node);
 }
